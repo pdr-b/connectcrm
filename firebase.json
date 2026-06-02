@@ -1,0 +1,25 @@
+{
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "connectcrm-5899e",
+          "appId": "1:939233679214:android:5e9f5632d883ed1d14137f",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "connectcrm-5899e",
+          "configurations": {
+            "android": "1:939233679214:android:5e9f5632d883ed1d14137f",
+            "web": "1:939233679214:web:d6d4d547e44a2e9414137f"
+          }
+        }
+      }
+    }
+  }
+}

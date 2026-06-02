@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "939233679214",
+    "project_id": "connectcrm-5899e",
+    "storage_bucket": "connectcrm-5899e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939233679214:android:5e9f5632d883ed1d14137f",
+        "android_client_info": {
+          "package_name": "br.com.connectcrm.connectcrm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939233679214-4c33lkb454qvi4lnh00psmlh7smsf0jh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy-upwkNq7pI0K9pTbUAj6Hc0JPzCnsTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "939233679214-4c33lkb454qvi4lnh00psmlh7smsf0jh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "939233679214-tkk0velrg5ot1fbh0itom4bnue88s2su.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.connectcrm.connectcrm"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
