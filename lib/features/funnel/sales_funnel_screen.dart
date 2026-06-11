@@ -5,6 +5,7 @@ import '../../shared/widgets/app_card.dart';
 import '../../shared/widgets/empty_state.dart';
 import '../clients/data/client.dart';
 import '../clients/widgets/status_chip.dart';
+import 'sales_funnel_metrics.dart';
 
 class SalesFunnelScreen extends StatelessWidget {
   const SalesFunnelScreen({
@@ -19,8 +20,8 @@ class SalesFunnelScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final total = clients.length;
-    final closed = clients.where((client) => client.status == 'Fechado').length;
-    final conversion = total == 0 ? 0 : (closed / total * 100).round();
+    final closed = countClientsByStatus(clients, 'Fechado');
+    final conversion = calculateConversionRate(clients);
 
     return Scaffold(
       body: SafeArea(
@@ -75,7 +76,7 @@ class SalesFunnelScreen extends StatelessWidget {
                         Expanded(
                           child: _StageCounter(
                             label: 'Novo Lead',
-                            count: _countByStatus('Novo Lead'),
+                            count: countClientsByStatus(clients, 'Novo Lead'),
                             color: AppColors.purple,
                           ),
                         ),
@@ -83,7 +84,7 @@ class SalesFunnelScreen extends StatelessWidget {
                         Expanded(
                           child: _StageCounter(
                             label: 'Negociação',
-                            count: _countByStatus('Negociação'),
+                            count: countClientsByStatus(clients, 'Negociação'),
                             color: AppColors.amber,
                           ),
                         ),
@@ -123,17 +124,17 @@ class SalesFunnelScreen extends StatelessWidget {
                   delegate: SliverChildListDelegate([
                     _StageSection(
                       title: 'Novo Lead',
-                      clients: _clientsByStatus('Novo Lead'),
+                      clients: clientsByStatus(clients, 'Novo Lead'),
                     ),
                     const SizedBox(height: 18),
                     _StageSection(
                       title: 'Negociação',
-                      clients: _clientsByStatus('Negociação'),
+                      clients: clientsByStatus(clients, 'Negociação'),
                     ),
                     const SizedBox(height: 18),
                     _StageSection(
                       title: 'Fechado',
-                      clients: _clientsByStatus('Fechado'),
+                      clients: clientsByStatus(clients, 'Fechado'),
                     ),
                   ]),
                 ),
@@ -144,13 +145,6 @@ class SalesFunnelScreen extends StatelessWidget {
     );
   }
 
-  int _countByStatus(String status) {
-    return clients.where((client) => client.status == status).length;
-  }
-
-  List<Client> _clientsByStatus(String status) {
-    return clients.where((client) => client.status == status).toList();
-  }
 }
 
 class _BigMetric extends StatelessWidget {

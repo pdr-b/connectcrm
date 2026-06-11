@@ -1,0 +1,7 @@
+ID,Descricao,Gravidade,Prioridade,Responsavel,Status,Correcao
+D-001,Android carregava login/cadastro sem concluir por permissao/conexao Firebase,Critico,Bloqueante,Pedro,Fechado,Adicionar permissoes Android e retestar no celular
+D-002,Cadastro podia autenticar mas travar ao salvar dados complementares,Alto,Imediata,Pedro,Fechado,Tratar gravacao do perfil e manter navegacao apos sucesso
+D-003,Excluir cliente falhava quando havia historico/subcolecao protegida,Alto,Imediata,Pedro,Fechado,Fallback para excluir documento do cliente mesmo se interacoes falharem
+D-004,Registrar interacao falhava com regras Firestore nao publicadas para subcolecao,Alto,Imediata,Pedro,Fechado,Fallback interactionLog dentro do documento do cliente
+D-005,SDK/AVD incompleto impedia simulacao Android,Medio,Alta,Pedro,Fechado,Instalacao do Android SDK/cmdline tools e uso de dispositivo real
+D-006,Saudacao inicial podia mostrar nome generico,Medio,Normal,Pedro,Fechado,Ajustar exibicao com dados do usuario autenticado
